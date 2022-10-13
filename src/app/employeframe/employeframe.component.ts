@@ -12,7 +12,7 @@ export class EmployeframeComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(EmployedialogComponent);
+    const dialogRef = this.dialog.open(EmployedialogComponent,{width: '30%'});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`) ;

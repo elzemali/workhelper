@@ -1,28 +1,46 @@
 <h1 mat-dialog-title>Ajouter employe</h1>
-
-<div mat-dialog-content> 
-    <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
-        <input matInput placeholder="Le nom de l'employe">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>preom</mat-label>
-        <input matInput placeholder="Le prenom de l'employe">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>adresse</mat-label>
-        <input matInput placeholder="L'adresse de l'employe'">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>fonction</mat-label>
-        <mat-select  placeholder="L'adresse de l'employe'">
-            <mat-option value="enseignant">Enseignant</mat-option>
-            <mat-option value="administrateur">Administrateur</mat-option>
-            <mat-option value="agent">Agent</mat-option>
-        </mat-select>
-    </mat-form-field>
-
-</div>
+    
+        <div mat-dialog-content > 
+            <form [formGroup]="employeForm">
+            <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input matInput placeholder="Le nom de l'employe" formControlName="nom">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>preom</mat-label>
+            <input matInput placeholder="Le prenom de l'employe" formControlName="prenom">
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>adresse</mat-label>
+            <input matInput placeholder="L'adresse de l'employe" formControlName="adress">
+        </mat-form-field>
+    
+          
+        <mat-form-field appearance="outline">
+            <mat-label>fonction</mat-label>
+            <mat-select  placeholder="la fonction" formControlName="fonction">
+                <mat-option value="enseignant">Enseignant</mat-option>
+                <mat-option value="administrateur">Administrateur</mat-option>
+                <mat-option value="agent">Agent</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        </form>      
+    </div>
+    <div mat-dialog-actions [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+        <button  style = "margin-left: 8px;"  mat-raised-button color ="primary" (click)="ajouterEmploye()" >Enregistrer</button>
+    
+    </div>
+  
+   
