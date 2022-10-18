@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class EmployeApiService {
 
-  url:string  = "http://localhost:3000/employes";
+  url:string  = "http://localhost:3000/employes/";
   constructor(private http:HttpClient) { }
 
   getAllEmploye(){
@@ -16,5 +16,11 @@ export class EmployeApiService {
   addEmploye(data : any){
     return  this.http.post<any>(this.url,data);
     
+  }
+  editEmploye(data : any,id : number){
+    return  this.http.put<any>(this.url+id,data);
+  }
+  deleteEmploye(id:number){
+    return this.http.delete(this.url+id);
   }
 }

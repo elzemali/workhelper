@@ -12,7 +12,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./employeframe.component.css']
 })
 export class EmployeframeComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'Nom', 'Prenom', 'Adress','Fonction','Date'];
+  displayedColumns: string[] = ['id', 'Nom', 'Prenom', 'Adress','Fonction','Date','Action'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -27,7 +27,15 @@ export class EmployeframeComponent implements OnInit {
     const dialogRef = this.dialog.open(EmployedialogComponent,{width: '30%'});
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`) ;
+      this.getAllEmploye();
+    });
+  }
+
+  editDialog(row :any){
+    const dialogRef = this.dialog.open(EmployedialogComponent,{width: '30%', data : row}
+    );
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllEmploye();
     });
   }
 
@@ -53,6 +61,7 @@ export class EmployeframeComponent implements OnInit {
 
   }
 
+  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

@@ -1,11 +1,12 @@
 {
   "employes": [
     {
-      "id": 1,
-      "nom": "mar",
+      "nom": "mercredi",
       "prenom": "test",
       "adress": "ici",
-      "fonction": "enseignant"
+      "date": "2002-10-19T23:00:00.000Z",
+      "fonction": "enseignant",
+      "id": 1
     },
     {
       "nom": "zemali",
@@ -22,6 +23,14 @@
       "date": "2017-10-16T23:00:00.000Z",
       "fonction": "enseignant",
       "id": 3
+    },
+    {
+      "nom": "te",
+      "prenom": "max",
+      "adress": "here",
+      "date": "2003-05-03T23:00:00.000Z",
+      "fonction": "administrateur",
+      "id": 4
     }
   ],
   "posts": [
