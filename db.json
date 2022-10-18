@@ -1,4 +1,29 @@
 {
+  "employes": [
+    {
+      "id": 1,
+      "nom": "mar",
+      "prenom": "test",
+      "adress": "ici",
+      "fonction": "enseignant"
+    },
+    {
+      "nom": "zemali",
+      "prenom": "lamine",
+      "adress": "france",
+      "date": "2010-10-09T23:00:00.000Z",
+      "fonction": "administrateur",
+      "id": 2
+    },
+    {
+      "nom": "benhadid",
+      "prenom": "adnene",
+      "adress": "dar elbeida",
+      "date": "2017-10-16T23:00:00.000Z",
+      "fonction": "enseignant",
+      "id": 3
+    }
+  ],
   "posts": [
     {
       "id": 1,

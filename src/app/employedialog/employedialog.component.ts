@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { EmployeApiService } from '../services/employe-api.service';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-employedialog',
   templateUrl: './employedialog.component.html',
@@ -10,7 +11,7 @@ export class EmployedialogComponent implements OnInit {
 
   employeForm !: FormGroup;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private employeApi:EmployeApiService,private dialoRef:MatDialogRef<EmployedialogComponent>) { }
 
   ngOnInit(): void {
     this.employeForm = this.formBuilder.group({
@@ -24,8 +25,19 @@ export class EmployedialogComponent implements OnInit {
   }
 
   ajouterEmploye():void{
+    if(this.employeForm.valid){
+    this.employeApi.addEmploye(this.employeForm.value).subscribe({
+      next:(res)=>{ alert("employe ajouté avec succes");
+      this.employeForm.reset();
+      this.dialoRef.close();
+      
+      },
+
+      error: (err)=> { },
+    });
 
     console.log(this.employeForm.value)
+  }
   }
 
 }
