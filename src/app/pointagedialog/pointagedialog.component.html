@@ -1,0 +1,35 @@
+<div mat-dialog-title>
+<h1>Pointage</h1>
+</div>
+<div mat-dialog-content>
+<form [formGroup]="pointageForm">
+<p>
+    <mat-form-field appearance="outline">
+      <mat-label>Id employe</mat-label>
+      <input formControlName="id_employe" matInput placeholder="Id employe">
+     
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Heure</mat-label>
+      <input matInput placeholder="Heure" formControlName="heure">
+    </mat-form-field>
+  </p>
+  <p>
+  <mat-form-field appearance="outline">
+    <mat-label>Date de pointage</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</p>
+</form>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="primary" (click)="this.addPointage()"> Ajouter</button>
+  <button mat-raised-button color="warn" mat-dialog-close   style="margin-left: 8px;"> Annuler</button>
+</div>
+  

@@ -33,6 +33,20 @@
       "id": 4
     }
   ],
+  "pointage": [
+    {
+      "id": 1,
+      "id_employe": "",
+      "heure": "",
+      "date": ""
+    },
+    {
+      "id_employe": "1",
+      "heure": "20",
+      "date": "2022-10-18T23:00:00.000Z",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,

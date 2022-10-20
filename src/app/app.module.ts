@@ -21,15 +21,21 @@ import {  HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { PointageframeComponent } from './pointageframe/pointageframe.component';
+import { PointagedialogComponent } from './pointagedialog/pointagedialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     EmployeframeComponent,
-    EmployedialogComponent
+    EmployedialogComponent,
+    PointageframeComponent,
+    PointagedialogComponent
   ],
   imports: [
     BrowserModule,
+
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -38,7 +44,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,MatSelectModule,MatDatepickerModule,MatNativeDateModule,ReactiveFormsModule,
-    HttpClientModule,MatTableModule,MatPaginatorModule,MatSortModule
+    HttpClientModule,MatTableModule,MatPaginatorModule,MatSortModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
